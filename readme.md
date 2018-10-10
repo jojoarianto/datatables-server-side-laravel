@@ -42,6 +42,8 @@ Jenssegers\Mongodb\MongodbServiceProvider::class,
 
  *default* at database.php change to *mongodb*
 
+*Model Examples*
+
 ```php
 <?php
 

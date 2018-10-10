@@ -147,6 +147,9 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
+        // add custom
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
+
         /*
          * Package Service Providers...
          */

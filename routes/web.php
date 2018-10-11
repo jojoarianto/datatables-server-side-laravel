@@ -16,3 +16,10 @@ Route::get('/', function () {
 });
 
 Route::get('regions', 'RegionController@index');
+Route::get('/serverSide', [
+	'as' => 'serverSide',
+	'uses' => function () {
+		$regions = App\Region::get(['_id', 'name', 'number']);
+		return Datatables::collection(App\Region::get(['_id', 'name', 'number']))->make();
+	},
+]);

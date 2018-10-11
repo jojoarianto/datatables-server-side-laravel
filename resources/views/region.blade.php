@@ -19,22 +19,15 @@
     <body>
         <div class="container">
             <h2 style="text-align: center;">Table of Region</h2>
-            <table class="table table-bordered table-condensed table-striped" id="table">
+            <table class="table table-bordered table-condensed table-striped datatable mdl-data-table dataTable" id="table">
                 <thead>
-                    <tr>
-                        <th class="text-center">Region Id/th>
+                    <tr> 
+                        <th class="text-center">ID</th>
                         <th class="text-center">Region Name</th>
-                        <th class="text-center">Event Id</th>
+                        <th class="text-center">Region Code</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($region as $row)
-                    <tr>
-                        <td>{{ $row->_id }}</td>
-                        <td>{{ $row->name }}</td>
-                        <td>{{ $row->event_id }}</td>
-                    </tr>
-                    @endforeach
                 </tbody>
             </table>
         </div>
@@ -43,7 +36,17 @@
         <!-- script code -->
         <script>
           $(document).ready(function() {
-            $('#table').DataTable();
+            $('#table').DataTable({
+                processing: true,
+                serverSide: true,
+                ajax: "{{ route('serverSide') }}",
+                lengthMenu: [5, 25, 100],
+                columnDeft: [{
+                    targets: [0,1,2],
+                    className: "mdl-data-table__cell--non-numeric"
+                }],
+            });
+
         } );
         </script>
     </body>

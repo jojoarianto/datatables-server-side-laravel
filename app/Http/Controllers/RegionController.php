@@ -15,12 +15,7 @@ class RegionController extends Controller
     public function index()
     {
     	$data['region'] = Region::with('event')->get();
-    	// dd($data['region']);
-
     	return view('region', $data);
-
-    	// $region = Region::with('event')->first();
-	    dd($region);
     }
 
 }

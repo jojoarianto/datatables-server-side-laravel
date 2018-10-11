@@ -10,14 +10,12 @@ class RegionController extends Controller
     
     /**
      * [index description]
-     * @return [type] [description]
+     * @return [view] [description]
      */
     public function index()
     {
-    	$region = Region::all();
+    	$region = Region::with('event')->first();
 	    dd($region);
-
-    	// return $region;
     }
 
 }

@@ -6,7 +6,8 @@ Simple implementation datatable server side with laravel
 composer install
 ``` 
 ## Referensi
--
+- https://medium.com/justlaravel/how-to-implement-datatables-server-side-in-laravel-bcacf8472d70
+- https://justlaravel.com/how-to-implement-datatables-in-laravel/
 
 ## To Do 
 - [ ] Read All Data

@@ -22,7 +22,7 @@
             <table class="table table-bordered table-condensed table-striped datatable mdl-data-table dataTable" id="table">
                 <thead>
                     <tr> 
-                        <th class="text-center">ID</th>
+                        <th class="text-center">Region Id</th>
                         <th class="text-center">Region Name</th>
                         <th class="text-center">Region Code</th>
                     </tr>
@@ -32,22 +32,21 @@
             </table>
         </div>
 
-
         <!-- script code -->
         <script>
           $(document).ready(function() {
             $('#table').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('serverSide') }}",
+                ajax: "{{ route('get-data-regions') }}",
                 lengthMenu: [5, 25, 100],
                 columnDeft: [{
                     targets: [0,1,2],
                     className: "mdl-data-table__cell--non-numeric"
                 }],
             });
-
         } );
         </script>
+
     </body>
 </html>

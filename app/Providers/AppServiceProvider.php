@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,9 +14,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (env('REDIRECT_HTTPS') == 'true') {
-            URL::forceSchema('https');
+        if(config('app.redirect_https'))
+        {
+            \URL::forceScheme('https');
         }
+        
+        Schema::defaultStringLength(191);
     }
 
     /**

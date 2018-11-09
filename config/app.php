@@ -215,4 +215,5 @@ return [
 
     ],
 
+    'redirect_https' => env('REDIRECT_HTTPS', 'true')
 ];
